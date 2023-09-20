@@ -18,4 +18,4 @@ jobs:
 
       - name: Deploy Database
         run: |
-          mysql -h 4.216.192.72 -P 3306 -u ${{ secrets.DB_USERNAME }} -p"${{ secrets.DB_PASSWORD }}" < values.sql
+          mysql -h 4.216.192.72 -P 3306 -u ${{ secrets.DB_USERNAME }} -p"${{ secrets.DB_PASSWORD }}" -e "USE rulex; source values.sql"
