@@ -1,0 +1,21 @@
+name: Deploy SQL Database
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up MySQL client
+        run: sudo apt-get -y install mysql-client
+
+      - name: Deploy Database
+        run: |
+          mysql -h 4.216.192.72 -P 3306 -u ${{ secrets.DB_USERNAME }} -p"${{ secrets.DB_PASSWORD }}" < values.sql
