@@ -1,3 +1,7 @@
+-- Empty the "SHIPMENTS" table
+TRUNCATE TABLE SHIPMENTS;
+
+-- Insert new data into the "SHIPMENTS" table
 INSERT INTO SHIPMENTS (shipment_date, customer_name, product_name, quantity)
 VALUES
    ('2023-09-23', 'Alice Johnson', 'Widget D', 30),
